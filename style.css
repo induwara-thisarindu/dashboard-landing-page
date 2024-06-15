@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Martian Mono", monospace;
+}
+
+body {
+    background-color: #1e293b;
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(600px, 4fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar content";
+    height: 100vh;
+}
+
+.side-bar {
+    grid-area: sidebar;
+    background: #0f172a;
+    padding: 40px;
+}
+
+.side-bar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.side-bar .logo h1 {
+    font-size: 25px;
+    color: #64748b;
+}
+
+.side-bar .logo svg {
+    fill: #ccc;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.side-bar .navbar svg {
+    fill: #ccc;
+    width: 30px;
+}
+
+.side-bar .navbar  ul {
+    margin-top: 50px;
+}
+
+.side-bar .navbar  ul li {
+    list-style-type: none;
+}
+
+.side-bar .navbar  ul li a{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 10px;
+    color: #f1f5f9;
+    text-decoration: none;
+}
+
+.header {
+    grid-area: header;
+    background: #1f2937;
+    box-shadow: 2px 2px 2px 3px #0f172a;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.header .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    margin-bottom: 10px;
+}
+
+.header .header-top .search-bar {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .header-top .search-bar input {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    background: linear-gradient(#0f172a, #1f2937);
+    border: 2px solid #4b5563;
+    padding: 5px;
+    outline: none;
+    color: #ccc;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 10px #3a3a3a;
+}
+
+.header .header-top .profile-info {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 1rem;
+}
+
+.header .header-top .profile-info img {
+    width: 35px;
+    border-radius: 50%;
+}
+
+.header .header-top .profile-info p {
+    color: #ccc;
+}
+
+.header .header-top .search-bar label svg {
+    width: 40px;
+    font-weight: bold;
+    fill: #f9fafb;
+    border-radius: 50%;
+    background: linear-gradient(#4b5563, #1e293b);
+    padding: 10px;
+}
+
+.header .header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    gap: 1rem;
+}
+
+.header .header-bottom .profile {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    line-height: 1.5rem;
+}
+
+.header .header-bottom .profile h4 a {
+    color: #f9fafb;
+    font-weight: 400;
+}
+ 
+.header .header-bottom .profile img {
+    width: 75px;
+    border-radius: 50%;
+    border: 5px solid #0f172a;
+}
+
+.header .header-bottom .crud {
+    display: flex;
+    gap: 1rem;
+}
+
+.header .header-bottom .crud button {
+    padding: 10px;
+    background-color: #566986;
+    color: #f9fafb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    transition: all 0.3s;
+}
+
+.header .header-bottom .crud button:hover {
+    background-color: #4b5563;
+}
+
+.content {
+    grid-area: content;
+    padding: 40px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: minmax(300px, 3fr) minmax(250px, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "projects announcements"
+        "projects trending";
+}
+
+.content .projects {
+    grid-area: projects;
+    color: #ccc;
+}
+
+.content .projects .project-cards {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.content .projects .project-cards .card{
+    padding: 25px;
+    isolation: isolate;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.content .projects .project-cards .card::before {
+    content: "";
+    background: linear-gradient(0deg, rgb(0 0 0 / .8), rgb(0 0 0 / .9));
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.content .projects .project-cards .card1 {
+    background: url(images/project\ \(1\).png);
+    background-size: contain;
+}
+
+.content .projects .project-cards .card2 {
+    background: url(images/project\ \(3\).png);
+    background-size: contain;
+}
+
+.content .projects .project-cards .card3 {
+    background: url(images/project\ \(4\).png);
+    background-size: contain;
+}
+
+.content .projects .project-cards .card4 {
+    background: url(images/project\ \(5\).png);
+    background-size: contain;
+}
+
+.content .projects .project-cards .card5 {
+    background: url(images/project\ \(6\).png);
+    background-size: contain;
+}
+
+.content .projects .project-cards .card6 {
+    background: url(images/project\ \(7\).png);
+    background-size: contain;
+}
+
+.content .projects .project-cards .card h3 {
+    margin-bottom: 20px;
+    color: goldenrod;
+}
+
+.content .projects .project-cards .card p {
+    height: 150px;
+    overflow: hidden;
+    text-overflow: clip;
+    margin-bottom: 20px;
+    color: rgb(202, 84, 84);
+    width: 250px;
+}
+
+.content .projects .project-cards .card .links {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.content .projects .project-cards .card .links a{
+    color: yellow;
+}
+
+.content .projects .project-cards .card:hover {
+    box-shadow: 1px 1px 50px #0f172a;
+}
+
+.content .projects .project-cards .card .links a svg {
+    fill: yellow;
+    width: 40px;
+}
+
+.content .announcements {
+    grid-area: announcements;
+    color: #ccc;
+    background: #0c1322;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 100px #0f172a;
+}
+
+.announcement-list  ul{
+    background-color: #0009;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.announcement-list  ul li {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.announcement-list  ul li:after {
+    content: "";
+    background: #ccc;
+    height: 2px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.announcement-list  ul li a {
+    color: #adbcca;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.announcement-list  ul li a h3 {
+    margin-bottom: 15px;
+    color: #f9fafb;
+}
+
+.content .trending {
+    grid-area: trending;
+    color: #ccc;
+    background: #0c1322;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 100px #0f172a;
+    margin-top:30px;
+}
+
+.user-list  ul{
+    background-color: #0009;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.user-list ul li {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 20px;
+    gap: 1rem;
+}
+
+.user-list ul li a {
+    color: #adbcca;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.avatar img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.tag {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .header .header-bottom .crud {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1700px) {
+    .content {
+        grid-area: content;
+        padding: 40px;
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: minmax(350px, 3fr);
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+            "projects projects"
+            "announcements trending";
+    }
+
+    .content .announcements {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1450px) {
+    .content {
+        grid-area: content;
+        padding: 40px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content .announcements {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .header .header-top {
+        display: none;
+    }
+
+    .header .header-bottom {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header .header-bottom .crud {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    
+    .header .header-bottom .crud button {
+        padding: 10px;
+        background-color: #566986;
+        color: #f9fafb;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        flex: 1;
+        transition: all 0.3s;
+    }
+}
+
+@media (max-width: 940px) {
+    .side-bar {
+        display: none;
+    }
+
+    body {
+        background-color: #1e293b;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+            "header header"
+            "content content";
+        height: 100vh;
+    }
+
+    .header .header-bottom {
+        gap: 3rem;
+    }
+}
